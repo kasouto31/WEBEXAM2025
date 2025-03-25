@@ -1,0 +1,279 @@
+:root {
+    --background-color: #6d6d6d;
+    --container-color: #333;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #00bcd4;
+}
+
+body{
+    background-color: var(--background-color);
+}
+
+/* 
+ /$$   /$$                            /$$$$$$$                     
+| $$$ | $$                           | $$__  $$                    
+| $$$$| $$  /$$$$$$  /$$    /$$      | $$  \ $$  /$$$$$$   /$$$$$$ 
+| $$ $$ $$ |____  $$|  $$  /$$/      | $$$$$$$  |____  $$ /$$__  $$
+| $$  $$$$  /$$$$$$$ \  $$/$$/       | $$__  $$  /$$$$$$$| $$  \__/
+| $$\  $$$ /$$__  $$  \  $$$/        | $$  \ $$ /$$__  $$| $$      
+| $$ \  $$|  $$$$$$$   \  $/         | $$$$$$$/|  $$$$$$$| $$      
+|__/  \__/ \_______/    \_/          |_______/  \_______/|__/ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--container-color);
+    color: var(--white-color);
+    position: relative;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: var(--white-color);
+    transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+    color: var(--text-color);
+}
+
+/* Menu toggle button (for mobile)  */
+.menu-toggle {
+    display: none; /* Caché par défaut */
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+/*Donner de l'espace entre le carousel et la nav bar*/
+main {
+    background-color: var(--container-color);
+    margin: 5vh 5vw;
+    padding: 5vh 5vw;
+}
+
+/*
+  /$$$$$$   /$$$$$$  /$$$$$$$   /$$$$$$  /$$   /$$  /$$$$$$  /$$$$$$$$ /$$      
+ /$$__  $$ /$$__  $$| $$__  $$ /$$__  $$| $$  | $$ /$$__  $$| $$_____/| $$      
+| $$  \__/| $$  \ $$| $$  \ $$| $$  \ $$| $$  | $$| $$  \__/| $$      | $$      
+| $$      | $$$$$$$$| $$$$$$$/| $$  | $$| $$  | $$|  $$$$$$ | $$$$$   | $$      
+| $$      | $$__  $$| $$__  $$| $$  | $$| $$  | $$ \____  $$| $$__/   | $$      
+| $$    $$| $$  | $$| $$  \ $$| $$  | $$| $$  | $$ /$$  \ $$| $$      | $$      
+|  $$$$$$/| $$  | $$| $$  | $$|  $$$$$$/|  $$$$$$/|  $$$$$$/| $$$$$$$$| $$$$$$$$
+ \______/ |__/  |__/|__/  |__/ \______/  \______/  \______/ |________/|________/*/
+.carousel {
+    position: relative;
+    max-width: 300%;
+    max-height: 90vh; /*Peut créer un bug de coupage de l'image parfois*/
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    padding-left: 0;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.carousel-button-left {
+    left: 1vw;
+}
+
+.carousel-button-right {
+    right: 1vw;
+}
+
+.carousel-button:focus {
+    outline: none;
+}
+
+/*
+/$$$$$$$$ /$$$$$$   /$$$$$$  /$$$$$$$$ /$$$$$$$$ /$$$$$$$ 
+| $$_____//$$__  $$ /$$__  $$|__  $$__/| $$_____/| $$__  $$
+| $$     | $$  \ $$| $$  \ $$   | $$   | $$      | $$  \ $$
+| $$$$$  | $$  | $$| $$  | $$   | $$   | $$$$$   | $$$$$$$/
+| $$__/  | $$  | $$| $$  | $$   | $$   | $$__/   | $$__  $$
+| $$     | $$  | $$| $$  | $$   | $$   | $$      | $$  \ $$
+| $$     |  $$$$$$/|  $$$$$$/   | $$   | $$$$$$$$| $$  | $$
+|__/      \______/  \______/    |__/   |________/|__/  |__/*/
+.footer-container {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--container-color);
+    color: var(--white-color);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 10px 0;
+    gap: 15px;
+}
+
+.footer-links li {
+    list-style: none;
+    position: relative;
+}
+
+.footer-links li:not(:last-child)::after {
+    content: '|';
+    margin-left: 10px;
+    color: #ccc;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00bcd4;
+}
+
+.footer-container p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/*
+ /$$$$$$$                                                              /$$                    
+| $$__  $$                                                            |__/                    
+| $$  \ $$  /$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$  /$$$$$$$   /$$$$$$$ /$$ /$$    /$$ /$$$$$$ 
+| $$$$$$$/ /$$__  $$ /$$_____/ /$$__  $$ /$$__  $$| $$__  $$ /$$_____/| $$|  $$  /$$//$$__  $$
+| $$__  $$| $$$$$$$$|  $$$$$$ | $$  \ $$| $$  \ $$| $$  \ $$|  $$$$$$ | $$ \  $$/$$/| $$$$$$$$
+| $$  \ $$| $$_____/ \____  $$| $$  | $$| $$  | $$| $$  | $$ \____  $$| $$  \  $$$/ | $$_____/
+| $$  | $$|  $$$$$$$ /$$$$$$$/| $$$$$$$/|  $$$$$$/| $$  | $$ /$$$$$$$/| $$   \  $/  |  $$$$$$$
+|__/  |__/ \_______/|_______/ | $$____/  \______/ |__/  |__/|_______/ |__/    \_/    \_______/
+                              | $$                                                            
+                              | $$                                                            
+                              |__/    
+*/
+
+
+/*
+NAV BAR
+*/
+@media (max-width: 600px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--container-color);
+        width: 100%; /* S'assure que le menu prend toute la largeur */
+        text-align: center;
+        padding: 10px 0; /* Ajoute un peu d'espace autour des liens */
+        margin: 1vw 0; /* Ajoute un peu d'espace autour du menu */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour un effet visuel */
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        z-index: 1100; /* S'assure que le bouton est au-dessus */
+    }
+
+    .nav-links {
+        display: none !important; /* Masquer le menu par défaut */
+    }
+
+    .nav-links.active {
+        display: flex !important;  /* Afficher le menu lorsqu'il est actif */
+        flex-direction: column;
+    }
+
+    .nav-links ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links ul li {
+        margin: 10px 0; /* Ajoute de l'espace entre les liens */
+    }
+
+    .nav-links ul li a {
+        font-size: 1rem; /* Taille de texte adaptée pour mobile */
+    }
+}
+
+/*Carousel*/
+@media (max-width: 600px) {
+    .carousel {
+        max-width: 100%; /* Limite la largeur à celle de l'écran */
+        margin: 20px auto; /* Centre le carousel et ajoute de l'espace autour */
+    }
+
+    .carousel-slide img {
+        width: 100%; /* S'assure que les images s'adaptent à la largeur */
+        height: auto; /* Maintient les proportions des images */
+    }
+
+    .carousel-button {
+        padding: 5px; /* Réduit la taille des boutons pour mobile */
+    }
+}
+
+/*FOOTER (pieds de page)*/
+@media (max-width: 600px) {
+    .footer-container {
+        font-size: 0.8rem; /* Réduit la taille du texte */
+        padding: 10px; /* Réduit le padding */
+    }
+
+    .footer-links {
+        flex-direction: column; /* Empile les liens verticalement */
+        gap: 5px; /* Réduit l'espace entre les liens */
+    }
+
+    .footer-links li:not(:last-child)::after {
+        content: ''; /* Supprime le séparateur '|' pour mobile */
+    }
+}
