@@ -83,7 +83,7 @@ nav h1 {
 
 .info-box {
     margin: 2vh 2vw;
-    background-color: var(--background-color);
+    background-color: var(--btn-color);
 }
 
 h2 {
