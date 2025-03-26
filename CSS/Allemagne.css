@@ -1,0 +1,210 @@
+:root {
+    --background-color: #D9D9D9;
+    --container-color: #595959;
+    --btn-color: #B4B4B4;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+}
+
+
+body {
+    background-color: var(--background-color);
+    margin: 2vh 2vw;
+}
+
+/* 
+ /$$   /$$                            /$$$$$$$                     
+| $$$ | $$                           | $$__  $$                    
+| $$$$| $$  /$$$$$$  /$$    /$$      | $$  \ $$  /$$$$$$   /$$$$$$ 
+| $$ $$ $$ |____  $$|  $$  /$$/      | $$$$$$$  |____  $$ /$$__  $$
+| $$  $$$$  /$$$$$$$ \  $$/$$/       | $$__  $$  /$$$$$$$| $$  \__/
+| $$\  $$$ /$$__  $$  \  $$$/        | $$  \ $$ /$$__  $$| $$      
+| $$ \  $$|  $$$$$$$   \  $/         | $$$$$$$/|  $$$$$$$| $$      
+|__/  \__/ \_______/    \_/          |_______/  \_______/|__/ */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5vh;
+}
+
+nav h1 {
+    color: var(--black-color);
+    margin-right: 40vw;
+    font-size: 2.1em;
+}
+
+.btn {
+    background-color: var(--btn-color);
+    padding: 1vh 2vw;
+    margin-right: 2vw;
+    font-size: 2.4em;
+    border: none;
+    color: var(--white-color);
+}
+
+.btn a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.btn:hover {
+    background-color: var(--container-color);
+    transition: 0.5s ease-in-out;
+}
+
+/*
+/$$$$$$$                     
+| $$__  $$                    
+| $$  \ $$  /$$$$$$  /$$   /$$
+| $$$$$$$  /$$__  $$|  $$ /$$/
+| $$__  $$| $$  \ $$ \  $$$$/ 
+| $$  \ $$| $$  | $$  >$$  $$ 
+| $$$$$$$/|  $$$$$$/ /$$/\  $$
+|_______/  \______/ |__/  \__/ 
+*/
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: baseline;
+    align-items: center;
+    background-color: var(--container-color);
+    color: var(--black-color);
+}
+
+.info-box {
+    margin: 2vh 2vw;
+    background-color: var(--background-color);
+}
+
+h2 {
+    font-size: 3em;
+    margin: 1vh 1vw;
+}
+
+p {
+    font-size: 2.5em;
+    margin: 1vh 1vw;
+}
+
+/*
+  /$$$$$$   /$$$$$$  /$$$$$$$   /$$$$$$  /$$   /$$  /$$$$$$  /$$$$$$$$ /$$      
+ /$$__  $$ /$$__  $$| $$__  $$ /$$__  $$| $$  | $$ /$$__  $$| $$_____/| $$      
+| $$  \__/| $$  \ $$| $$  \ $$| $$  \ $$| $$  | $$| $$  \__/| $$      | $$      
+| $$      | $$$$$$$$| $$$$$$$/| $$  | $$| $$  | $$|  $$$$$$ | $$$$$   | $$      
+| $$      | $$__  $$| $$__  $$| $$  | $$| $$  | $$ \____  $$| $$__/   | $$      
+| $$    $$| $$  | $$| $$  \ $$| $$  | $$| $$  | $$ /$$  \ $$| $$      | $$      
+|  $$$$$$/| $$  | $$| $$  | $$|  $$$$$$/|  $$$$$$/|  $$$$$$/| $$$$$$$$| $$$$$$$$
+ \______/ |__/  |__/|__/  |__/ \______/  \______/  \______/ |________/|________/*/
+
+.carousel {
+    margin: 2vh 2vw;
+    position: relative;
+    max-width: 300%;
+    max-height: 90vh; /*Peut créer un bug de coupage de l'image parfois*/
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    padding-left: 0;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.carousel-button-left {
+    left: 1vw;
+}
+
+.carousel-button-right {
+    right: 1vw;
+}
+
+.carousel-button:focus {
+    outline: none;
+}
+
+/*
+ /$$$$$$$                                                              /$$                    
+| $$__  $$                                                            |__/                    
+| $$  \ $$  /$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$  /$$$$$$$   /$$$$$$$ /$$ /$$    /$$ /$$$$$$ 
+| $$$$$$$/ /$$__  $$ /$$_____/ /$$__  $$ /$$__  $$| $$__  $$ /$$_____/| $$|  $$  /$$//$$__  $$
+| $$__  $$| $$$$$$$$|  $$$$$$ | $$  \ $$| $$  \ $$| $$  \ $$|  $$$$$$ | $$ \  $$/$$/| $$$$$$$$
+| $$  \ $$| $$_____/ \____  $$| $$  | $$| $$  | $$| $$  | $$ \____  $$| $$  \  $$$/ | $$_____/
+| $$  | $$|  $$$$$$$ /$$$$$$$/| $$$$$$$/|  $$$$$$/| $$  | $$ /$$$$$$$/| $$   \  $/  |  $$$$$$$
+|__/  |__/ \_______/|_______/ | $$____/  \______/ |__/  |__/|_______/ |__/    \_/    \_______/
+                              | $$                                                            
+                              | $$                                                            
+                              |__/    
+*/
+/*TEL*/
+@media (max-width: 600px) {
+    nav h1 {
+        margin-right: 20vw;
+    }
+
+    .btn {
+        font-size: 1.5em;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 2em;
+    }
+
+    .carousel {
+        max-height: 50vh;
+    }
+}
+
+/*Quelques ajustements pour tablette*/
+@media (min-width: 601px) and (max-width: 1024px) {
+    
+    .infos-box {
+        
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.3em;
+    }
+}
