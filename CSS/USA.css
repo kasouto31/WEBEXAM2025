@@ -1,13 +1,22 @@
+/*
+Malheureusement je dois faire plusieurs css à cause des couleurs de background 
+qui sont différentes pour chaque pages
+*/
+
 :root {
-    --background-color: #6d6d6d;
-    --container-color: #333;
-    --white-color: #fff;
-    --black-color: #000;
+    --background-color: #FFFFFF;
+    --container-color: #0E1457;
+    --btn-color: #AA0000;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
     --text-color: #00bcd4;
+    --separator-color: #ccc;
 }
 
-body{
+
+body {
     background-color: var(--background-color);
+    margin: 2vh 2vw;
 }
 
 /* 
@@ -19,52 +28,72 @@ body{
 | $$\  $$$ /$$__  $$  \  $$$/        | $$  \ $$ /$$__  $$| $$      
 | $$ \  $$|  $$$$$$$   \  $/         | $$$$$$$/|  $$$$$$$| $$      
 |__/  \__/ \_______/    \_/          |_______/  \_______/|__/ */
-.navbar {
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: var(--container-color);
-    color: var(--white-color);
-    position: relative;
+    margin-bottom: 0.5vh;
 }
 
-.navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+nav h1 {
+    color: var(--black-color);
+    margin-right: 40vw;
+    font-size: 2.1em;
 }
 
-.navbar .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-.navbar .nav-links li a {
-    text-decoration: none;
-    color: var(--white-color);
-    transition: color 0.3s;
-}
-
-.navbar .nav-links li a:hover {
-    color: var(--text-color);
-}
-
-/* Menu toggle button (for mobile)  */
-.menu-toggle {
-    display: none; /* Caché par défaut */
-    font-size: 1.5rem;
-    background: none;
+.btn {
+    background-color: var(--btn-color);
+    padding: 1vh 2vw;
+    margin-right: 2vw;
+    font-size: 2.4em;
     border: none;
     color: var(--white-color);
-    cursor: pointer;
 }
 
-/*Donner de l'espace entre le carousel et la nav bar*/
-main {
+.btn a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.btn:hover {
     background-color: var(--container-color);
-    margin: 5vh 5vw;
-    padding: 5vh 5vw;
+    transition: 0.5s ease-in-out;
+}
+
+/*
+/$$$$$$$                     
+| $$__  $$                    
+| $$  \ $$  /$$$$$$  /$$   /$$
+| $$$$$$$  /$$__  $$|  $$ /$$/
+| $$__  $$| $$  \ $$ \  $$$$/ 
+| $$  \ $$| $$  | $$  >$$  $$ 
+| $$$$$$$/|  $$$$$$/ /$$/\  $$
+|_______/  \______/ |__/  \__/ 
+*/
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: baseline;
+    align-items: center;
+    background-color: var(--container-color);
+    color: var(--black-color);
+}
+
+.info-box {
+    margin: 2vh 2vw;
+    background-color: var(--background-color);
+}
+
+h2 {
+    font-size: 3em;
+    margin: 1vh 1vw;
+}
+
+p {
+    font-size: 2.5em;
+    margin: 1vh 1vw;
 }
 
 /*
@@ -76,7 +105,9 @@ main {
 | $$    $$| $$  | $$| $$  \ $$| $$  | $$| $$  | $$ /$$  \ $$| $$      | $$      
 |  $$$$$$/| $$  | $$| $$  | $$|  $$$$$$/|  $$$$$$/|  $$$$$$/| $$$$$$$$| $$$$$$$$
  \______/ |__/  |__/|__/  |__/ \______/  \______/  \______/ |________/|________/*/
+
 .carousel {
+    margin: 2vh 2vw;
     position: relative;
     max-width: 300%;
     max-height: 90vh; /*Peut créer un bug de coupage de l'image parfois*/
@@ -139,6 +170,7 @@ main {
 | $$     |  $$$$$$/|  $$$$$$/   | $$   | $$$$$$$$| $$  | $$
 |__/      \______/  \______/    |__/   |________/|__/  |__/*/
 .footer-container {
+    margin-top: 2vh;
     text-align: center;
     padding: 20px;
     background-color: var(--container-color);
@@ -162,13 +194,13 @@ main {
 .footer-links li:not(:last-child)::after {
     content: '|';
     margin-left: 10px;
-    color: #ccc;
+    color: var(--separator-color);
 }
 
 .footer-links a {
     text-decoration: none;
-    color: white;
-    transition: color 0.3s;
+    color: var(--white-color);
+    transition: 0.3s ease-in-out;
 }
 
 .footer-links a:hover {
@@ -179,6 +211,7 @@ main {
     margin: 5px 0;
     font-size: 0.9rem;
 }
+
 
 /*
  /$$$$$$$                                                              /$$                    
@@ -193,77 +226,30 @@ main {
                               | $$                                                            
                               |__/    
 */
-
-
-/*
-NAV BAR
-*/
+/*TEL*/
 @media (max-width: 600px) {
-
-    main {      /*Laisser un peu plus de place pour le toggle menu*/
-        margin: 15vh 5vw;
-        padding: 5vh 5vw;
+    nav h1 {
+        margin-right: 20vw;
     }
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: var(--container-color);
-        width: 100%; /* S'assure que le menu prend toute la largeur */
-        text-align: center;
-        padding: 10px 0; /* Ajoute un peu d'espace autour des liens */
-        margin: 1vw 0; /* Ajoute un peu d'espace autour du menu */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour un effet visuel */
+    .btn {
+        font-size: 1.5em;
     }
 
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        z-index: 1100; /* S'assure que le bouton est au-dessus */
-    }
-
-    .nav-links {
-        display: none !important; /* Masquer le menu par défaut */
-    }
-
-    .nav-links.active {
-        display: flex !important;  /* Afficher le menu lorsqu'il est actif */
+    .content {
         flex-direction: column;
     }
 
-    .nav-links ul {
-        padding: 0;
-        margin: 0;
+    h2 {
+        font-size: 2.5em;
     }
 
-    .nav-links ul li {
-        margin: 10px 0; /* Ajoute de l'espace entre les liens */
+    p {
+        font-size: 2em;
     }
 
-    .nav-links ul li a {
-        font-size: 1rem; /* Taille de texte adaptée pour mobile */
-    }
-}
-
-/*Carousel*/
-@media (max-width: 600px) {
     .carousel {
-        max-width: 100%; /* Limite la largeur à celle de l'écran */
-        margin: 20px auto; /* Centre le carousel et ajoute de l'espace autour */
-    }
-
-    .carousel-slide img {
-        width: 100%; /* S'assure que les images s'adaptent à la largeur */
-        height: auto; /* Maintient les proportions des images */
-    }
-
-    .carousel-button {
-        padding: 5px; /* Réduit la taille des boutons pour mobile */
+        max-height: 50vh;
     }
 }
 
@@ -283,3 +269,16 @@ NAV BAR
         content: ''; /* Supprime le séparateur '|' pour mobile */
     }
 }
+
+/*Quelques ajustements pour tablette*/
+@media (min-width: 601px) and (max-width: 1024px) {
+    
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.3em;
+    }
+}
+
