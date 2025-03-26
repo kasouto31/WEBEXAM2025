@@ -58,6 +58,7 @@ nav h1 {
 
 .btn:hover {
     background-color: var(--container-color);
+    color: var(--btn-color);
     transition: 0.5s ease-in-out;
 }
 
@@ -78,7 +79,7 @@ nav h1 {
     flex-direction: baseline;
     align-items: center;
     background-color: var(--container-color);
-    color: var(--black-color);
+    color: var(--white-color);
 }
 
 .info-box {
