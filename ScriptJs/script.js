@@ -2,9 +2,12 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
+const main = document.querySelector('main')
+
 // Ajoute un événement pour afficher/masquer le menu
 menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active'); // Ajoute ou enlève la classe 'active'
+    main.classList.toggle('active'); 
 });
 
 /* Partie du carousel */

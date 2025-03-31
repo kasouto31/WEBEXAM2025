@@ -200,13 +200,18 @@ NAV BAR
 */
 @media (max-width: 600px) {
 
-    main {      /*Laisser un peu plus de place pour le toggle menu*/
+    main {          
+        margin: 5vh 2vw;
+        padding: 2vh 2vw;
+    }
+
+    main.active {      /*Laisser un peu plus de place pour le toggle menu*/
         margin: 15vh 5vw;
         padding: 5vh 5vw;
     }
 
     .nav-links {
-        display: none;
+        opacity: 0; /*Cacher le menu de base*/
         flex-direction: column;
         position: absolute;
         top: 100%;
@@ -214,9 +219,12 @@ NAV BAR
         background-color: var(--container-color);
         width: 100%; /* S'assure que le menu prend toute la largeur */
         text-align: center;
-        padding: 10px 0; /* Ajoute un peu d'espace autour des liens */
+        padding: 1vh 0; /* Ajoute un peu d'espace autour des liens */
         margin: 1vw 0; /* Ajoute un peu d'espace autour du menu */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour un effet visuel */
+        
+        /*Ajouter l'animation*/
+        transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
     .menu-toggle {
@@ -227,13 +235,14 @@ NAV BAR
         z-index: 1100; /* S'assure que le bouton est au-dessus */
     }
 
-    .nav-links {
-        display: none !important; /* Masquer le menu par défaut */
-    }
-
     .nav-links.active {
         display: flex !important;  /* Afficher le menu lorsqu'il est actif */
         flex-direction: column;
+
+        /*animation*/
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+        transform: scale(0.8);
+        opacity: 1; 
     }
 
     .nav-links ul {
