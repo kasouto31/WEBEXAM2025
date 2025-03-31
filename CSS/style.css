@@ -207,6 +207,7 @@ NAV BAR
 
     main.active {      /*Laisser un peu plus de place pour le toggle menu*/
         margin: 15vh 5vw;
+        margin-bottom: 5vw;
         padding: 5vh 5vw;
     }
 
