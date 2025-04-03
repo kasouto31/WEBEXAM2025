@@ -13,6 +13,10 @@ qui sont différentes pour chaque pages
     --separator-color: #ccc;
 }
 
+/*Mise en oeuvre d'une règle définitive*/
+li {
+    list-style: none;
+}
 
 body {
     background-color: var(--background-color);
@@ -49,6 +53,7 @@ nav h1 {
     font-size: 2.4em;
     border: none;
     color: var(--white-color);
+    text-decoration: none;
 }
 
 .btn a {
