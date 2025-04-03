@@ -22,6 +22,7 @@ Ce projet est un site web interactif présentant des avions emblématiques de la
 
 
 ## Structure du Projet
+```
 C:.
 |   index.html
 |   README.md
@@ -90,6 +91,7 @@ C:.
         Spitfire-2.png
         Spitfire-3.png
         Spitfire_Pc.jpg
+```
 
 Auteur
     Enzo Pietrzak
