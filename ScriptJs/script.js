@@ -1,3 +1,6 @@
+/* Envoie d'un message pour vérifier que le JS est bien actif */
+console.log("Code JavaScript actif !")
+
 // Sélectionne le bouton toggle et le menu
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');

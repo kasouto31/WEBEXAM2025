@@ -1,3 +1,6 @@
+/* Envoie d'un message pour vérifier que le JS est bien actif */
+console.log("Code JavaScript actif !")
+
 /* Partie du carousel */
 
 const track = document.querySelector('.carousel-track');
