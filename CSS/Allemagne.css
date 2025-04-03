@@ -231,6 +231,10 @@ p {
         margin-right: 20vw;
     }
 
+    .info-box {
+        order: 2;   /*Met le texte en second élément*/
+    }
+
     .btn {
         font-size: 1.5em;
     }
@@ -249,6 +253,7 @@ p {
 
     .carousel {
         max-height: 50vh;
+        order: 1;       /*Permet de mettre le caroussel en première élément (comem sur la MockUp de base*/
     }
 }
 
