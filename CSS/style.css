@@ -6,6 +6,11 @@
     --text-color: #00bcd4;
 }
 
+/*Mise en oeuvre d'une règle définitive*/
+li {
+    list-style: none;
+}
+
 body{
     background-color: var(--background-color);
 }
