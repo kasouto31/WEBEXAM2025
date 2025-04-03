@@ -80,7 +80,7 @@ nav h1 {
 .content {
     position: relative;
     display: flex;
-    flex-direction: baseline;
+    /*flex-direction: baseline;*/
     align-items: center;
     background-color: var(--container-color);
     color: var(--black-color);
