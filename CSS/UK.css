@@ -63,11 +63,8 @@ nav h1 {
 
 .btn:hover {
     background-color: var(--container-color);
-    transition: 0.5s ease-in-out;
-}
-
-.btn a:hover {
     color: var(--btn-color);
+    transition: 0.5s ease-in-out;
 }
 
 /*
